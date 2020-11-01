@@ -15,6 +15,17 @@ You will need to:
 
     Create an account in BEBOMS before you can use the API.
 
+# API Status Codes
+
+| Status Code               | Description                                                                                                               |
+|---------------------------|---------------------------------------------------------------------------------------------------------------------------|
+| 400 Bad Request           | The request was not in a correct form,                                                                                    |
+| 403 Forbidden             | Method authentication failed                                                                                              |
+| 404 Not found             | Endpoint does not exist                                                                                                   |
+| 405 Not allowed           | The method used is not allowed (eg PUT, DELETE)                                                                           |
+| 500 Internal Server Error | The object passed to the API could not be parsed or some unexpected error occurred in BEBOMS while processing API request |
+| 503 Service Unavailable   | You reached API limit.  Try again after some time                                                                         |
+
 
 ## Questions Collection [/questions]
 
