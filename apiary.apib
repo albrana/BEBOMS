@@ -15,6 +15,19 @@ You will need to:
 
     Create an account in BEBOMS before you can use the API.
 
+# Authentication
+
+To use the API you will need your BEBOMS Client ID and API Token. Contact admin@branaenterprises.com.com for details.
+
+Your Client Id and API Token are equivalent to a login and password. They must be kept secret and not shared in any way.
+
+Each request to the API must include these two values sent as HTTP headers:
+
+| Header        | Description                                 |
+|---------------|---------------------------------------------|
+| Authorization | You must send your API token in this header |
+| client_id     | You must send your client Id in this header |
+    
 # API Status Codes
 
 | Status Code               | Description                                                                                                               |
@@ -26,6 +39,11 @@ You will need to:
 | 500 Internal Server Error | The object passed to the API could not be parsed or some unexpected error occurred in BEBOMS while processing API request |
 | 503 Service Unavailable   | You reached API limit.  Try again after some time                                                                         |
 
+## Inventory [/inventory/products]
+
+### Get Products [GET]
+
++ Response 200 (application/json)
 
 ## Questions Collection [/questions]
 
