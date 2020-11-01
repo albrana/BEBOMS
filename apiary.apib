@@ -1,5 +1,5 @@
 FORMAT: 1A
-HOST: https://apex5.revion.com/
+HOST: https://apex5.revion.com
 
 # BEBOMS
 
@@ -39,11 +39,127 @@ Each request to the API must include these two values sent as HTTP headers:
 | 500 Internal Server Error | The object passed to the API could not be parsed or some unexpected error occurred in BEBOMS while processing API request |
 | 503 Service Unavailable   | You reached API limit.  Try again after some time                                                                         |
 
-## Inventory [/inventory/products]
+## Inventory [/ords/bebomsdev/inventory/products/]
 
 ### Get Products [GET]
++ Request
+    + Headers
+    
+            client_id: client_id
+            Authorization: Bearer access_token
 
 + Response 200 (application/json)
+
+        {
+            "rc_Products": [
+                {
+                    "product_id": 5202,
+                    "sku": "6",
+                    "product_name": "MM1-388",
+                    "qty_on_hand": 0,
+                    "product_avail": "Y",
+                    "list_price": 1.6,
+                    "upc_code": "669543941302",
+                    "net_wt": null,
+                    "product_description": "Park German Shepherd Chance Coaster"
+                },
+                {
+                    "product_id": 11054,
+                    "sku": "609239632886",
+                    "product_name": "250-2",
+                    "qty_on_hand": -12,
+                    "product_avail": "Y",
+                    "list_price": 0.9,
+                    "upc_code": null,
+                    "net_wt": null,
+                    "product_description": "At My Age, TTYL Car Coaster"
+                },
+                {
+                    "product_id": 11053,
+                    "sku": "722537718103",
+                    "product_name": "CE2-211",
+                    "qty_on_hand": -24,
+                    "product_avail": "Y",
+                    "list_price": 0.9,
+                    "upc_code": null,
+                    "net_wt": null,
+                    "product_description": "Shut The Duck Up Car Coaster"
+                },
+                {
+                    "product_id": 11072,
+                    "sku": "722537719179",
+                    "product_name": "RH5-104",
+                    "qty_on_hand": -4,
+                    "product_avail": "Y",
+                    "list_price": 7.5,
+                    "upc_code": null,
+                    "net_wt": null,
+                    "product_description": "Live the Life you Love  Box Sign"
+                }
+            ]
+        }
+
+## Customer [/ords/bebomsdev/customer/customer/]
+
+### Get Customers [GET]
+
++ Response 200 (application/json)
+
+        {
+            "rc_Customers": [
+                {
+                    "customer_id": 30938,
+                    "company_name": "Test Customer Active",
+                    "cust_street_address1": "123 main street",
+                    "cust_street_address2": null,
+                    "cust_street_address3": null,
+                    "cust_city": "Largo",
+                    "cust_state": "IL",
+                    "cust_postal_code": "33773",
+                    "cust_province": null,
+                    "country_code": "US",
+                    "bill_phone": "123-123-1234",
+                    "bill_email": null,
+                    "ship_company_name": "Test Customer Active",
+                    "ship_street_address1": "123 main street",
+                    "ship_street_address2": null,
+                    "ship_street_address3": null,
+                    "ship_city": "Largo",
+                    "ship_state": "IL",
+                    "ship_postal_code": "33773",
+                    "ship_province": null,
+                    "ship_country_code": null,
+                    "ship_phone": "123-123-1234",
+                    "ship_email": null
+                },
+                {
+                    "customer_id": 30919,
+                    "company_name": "Test Company4",
+                    "cust_street_address1": "cust street address1",
+                    "cust_street_address2": "cust_street_address2",
+                    "cust_street_address3": "cust_street_address3",
+                    "cust_city": "cust_city",
+                    "cust_state": "FL",
+                    "cust_postal_code": "33773",
+                    "cust_province": null,
+                    "country_code": "US",
+                    "bill_phone": "123-456-7890",
+                    "bill_email": "test@test.com",
+                    "ship_company_name": "Test Company4",
+                    "ship_street_address1": "cust street address1",
+                    "ship_street_address2": "cust_street_address2",
+                    "ship_street_address3": "cust_street_address3",
+                    "ship_city": "cust_city",
+                    "ship_state": "FL",
+                    "ship_postal_code": "33773",
+                    "ship_province": null,
+                    "ship_country_code": null,
+                    "ship_phone": "123-456-7890",
+                    "ship_email": "test2@test.com"
+                }
+            ]
+        }
+
 
 ## Questions Collection [/questions]
 
