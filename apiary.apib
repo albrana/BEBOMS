@@ -64,17 +64,6 @@ Each request to the API must include these two values sent as HTTP headers:
                     "product_description": "At My Age, TTYL Car Coaster"
                 },
                 {
-                    "product_id": 11053,
-                    "sku": "722537718103",
-                    "product_name": "CE2-211",
-                    "qty_on_hand": -24,
-                    "product_avail": "Y",
-                    "list_price": 0.9,
-                    "upc_code": null,
-                    "net_wt": null,
-                    "product_description": "Shut The Duck Up Car Coaster"
-                },
-                {
                     "product_id": 11072,
                     "sku": "722537719179",
                     "product_name": "RH5-104",
@@ -203,4 +192,158 @@ You may create a new customer using this action.
 
             {
                "customer_id": "30986"
+            }
+            
+            
+## Order [/ords/bebomsdev/order/order/{order_id}]
+
++ Parameters
+    + order_id (number) - 49659
+
+### Get Order [GET]
++ Request
+    + Headers
+    
+            client_id: client_id
+            Authorization: Bearer access_token
+
++ Response 200 (application/json)
+
+        {
+            "rc_Order": [
+                {
+                    "customer_id": 20495,
+                    "order_total": 111.37,
+                    "order_timestamp": "2020-09-11T19:38:47Z",
+                    "create_date": "2020-10-25T20:04:28Z",
+                    "status": "NEW",
+                    "shipping_cost": 0,
+                    "notes": "Please pay by check",
+                    "po_number": "SHTEST2",
+                    "order_items": [
+                        {
+                            "order_item_id": 559819,
+                            "product_id": 125,
+                            "sku": "CRAN",
+                            "unit_price": 49.5,
+                            "quantity": 1
+                        },
+                        {
+                            "order_item_id": 559820,
+                            "product_id": 126,
+                            "sku": "FRCLN",
+                            "unit_price": 49.5,
+                            "quantity": 1
+                        },
+                        {
+                            "order_item_id": 559821,
+                            "product_id": 127,
+                            "sku": "RENEG",
+                            "unit_price": 49.5,
+                            "quantity": 1
+                        }
+                    ]
+                }
+            ]
+        }
+
+## Create Order [/ords/bebomsdev/order/order/]
+
+### Create a New Order[POST]
+
+You may create a new order using this action. 
+
++ Request
+    + Headers
+    
+            client_id: client_id
+            Authorization: Bearer access_token
+            
+    + Body
+
+            {
+                "customer_id": 20495,
+                "order_total": 111.37,
+                "order_timestamp": "2020-09-11T19:38:47Z",
+                "shipping_cost": 0,
+                "notes": "Please pay by check",
+                "po_number": "SHTEST2"
+            }
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+               "order_id": 49659
+            }
+
+## Add Order Items [/ords/bebomsdev/order_items/order_items/{order_id}]
+
++ Parameters
+    + order_id (number) - 49659
+
+### Add Order Items[POST]
+
+You may add items to an order using this action. 
+
++ Request
+    + Headers
+    
+            client_id: client_id
+            Authorization: Bearer access_token
+            
+    + Body
+
+            {
+                "order_items": [
+                    {
+                        "product_id": 125,
+                        "sku": "CRAN",
+                        "unit_price": 49.5,
+                        "quantity": 1
+                    },
+                    {
+                        "product_id": 3200,
+                        "sku": "DARL",
+                        "unit_price": 49.5,
+                        "quantity": 1
+                    },
+                    {
+                        "product_id": 7328,
+                        "sku": "20BAGS",
+                        "unit_price": 0,
+                        "quantity": 1
+                    }
+                ]
+            }
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "rc_OrderItems": [
+                    {
+                        "order_item_id": 559899,
+                        "product_id": 125,
+                        "quantity": 1,
+                        "sku": "CRAN",
+                        "unit_price": 49.5
+                    },
+                    {
+                        "order_item_id": 559911,
+                        "product_id": 3200,
+                        "quantity": 1,
+                        "sku": "DARL",
+                        "unit_price": 49.5
+                    },
+                    {
+                        "order_item_id": 559912,
+                        "product_id": 7328,
+                        "quantity": 1,
+                        "sku": "20BAGS",
+                        "unit_price": 0
+                    }
+                ]
             }
