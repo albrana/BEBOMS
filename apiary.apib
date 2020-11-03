@@ -262,12 +262,38 @@ You may create a new order using this action.
     + Body
 
             {
-                "customer_id": 20495,
-                "order_total": 111.37,
-                "order_timestamp": "2020-09-11T19:38:47Z",
-                "shipping_cost": 0,
-                "notes": "Please pay by check",
-                "po_number": "SHTEST2"
+                "Order": [
+                    {
+                        "customer_id": 20495,
+                        "order_total": 111.37,
+                        "order_timestamp": "2020-09-11T19:38:47Z",
+                        "create_date": "2020-10-25T20:04:28Z",
+                        "status": "NEW",
+                        "shipping_cost": 0,
+                        "notes": "Please pay by check",
+                        "po_number": "SHTEST2",
+                        "order_items": [
+                            {
+                                "product_id": 125,
+                                "sku": "CRAN",
+                                "unit_price": 49.5,
+                                "quantity": 1
+                            },
+                            {
+                                "product_id": 660,
+                                "sku": "SWTDR",
+                                "unit_price": 49.5,
+                                "quantity": 1
+                            },
+                            {
+                                "product_id": 740,
+                                "sku": "TBLTNT",
+                                "unit_price": 0,
+                                "quantity": 1
+                            }
+                        ]
+                    }
+                ]
             }
 
 + Response 201 (application/json)
@@ -275,7 +301,36 @@ You may create a new order using this action.
     + Body
 
             {
-               "order_id": 49659
+                "rc_Order": [
+                    {
+                        "order_id": 49667,
+                        "customer_id": 20495,
+                        "po_number": "SHTEST2",
+                        "order_total": 111.37,
+                        "shipping_cost": 0,
+                        "notes": "Please pay by check",
+                        "order_items": [
+                            {
+                                "order_item_id": 559928,
+                                "product_id": 125,
+                                "sku": "CRAN",
+                                "quantity": 1
+                            },
+                            {
+                                "order_item_id": 559929,
+                                "product_id": 660,
+                                "sku": "SWTDR",
+                                "quantity": 1
+                            },
+                            {
+                                "order_item_id": 559930,
+                                "product_id": 740,
+                                "sku": "TBLTNT",
+                                "quantity": 1
+                            }
+                        ]
+                    }
+                ]
             }
 
 ## Add Order Items [/ords/bebomsdev/order_items/order_items/{order_id}]
