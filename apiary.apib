@@ -405,3 +405,73 @@ You may add items to an order using this action.
                     }
                 ]
             }
+            
+## Tracking [/ords/bebomsdev/tracking/orders/{from_date}]
+
+You may get order tracking information with this action. 
+
++ Parameters
+    + from_date (string) - 2021-01-20T20:04:28Z
+
+### Get Orders [GET]
++ Request
+    + Headers
+    
+            client_id: client_id
+            Authorization: Bearer access_token
+
++ Response 200 (application/json)
+
+        {
+            "rc_Orders": [
+                {
+                    "order_source": "POSTMAN",
+                    "order_id": 49661,
+                    "po_number": "SHTEST2",
+                    "tracking_number": "782998071361",
+                    "shipping_cost": 0
+                },
+                {
+                    "order_source": "FAIRE",
+                    "order_id": 49672,
+                    "po_number": "BO_CT22BPCVQA",
+                    "tracking_number": "782998071370",
+                    "shipping_cost": 0
+                },
+                {
+                    "order_source": "FAIRE",
+                    "order_id": 49673,
+                    "po_number": "BO_9I9DVUR1GC",
+                    "tracking_number": "782998071371",
+                    "shipping_cost": 0
+                },
+                {
+                    "order_source": "FAIRE",
+                    "order_id": 49674,
+                    "po_number": "BO_H1V2RYLE7A",
+                    "tracking_number": "782998071372",
+                    "shipping_cost": 0
+                },
+                {
+                    "order_source": "FAIRE",
+                    "order_id": 49675,
+                    "po_number": "BO_5M29FLOGPC",
+                    "tracking_number": "782998071373",
+                    "shipping_cost": 0
+                },
+                {
+                    "order_source": "FAIRE",
+                    "order_id": 49677,
+                    "po_number": "BO_7UKX2P1YZ6",
+                    "tracking_number": "782998071374",
+                    "shipping_cost": 0
+                },
+                {
+                    "order_source": "POSTMAN",
+                    "order_id": 49652,
+                    "po_number": "SHTEST2",
+                    "tracking_number": "782998071375",
+                    "shipping_cost": 0
+                }
+            ]
+        }
