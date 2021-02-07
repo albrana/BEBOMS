@@ -7,7 +7,7 @@ BEBOMS is a set of REST APIs allowing consumers to create customers and orders.
 
 # API
 
-The API base URL is https://apex5.revion.com/ords/bebomsdev. To call any API endpoint (method) you must append the endpoint name and parameters to the API URL.
+The API base URL is https://apex5.revion.com/ords/beboms. To call any API endpoint (method) you must append the endpoint name and parameters to the API URL.
 
 Note: The API accepts only JSON data format.
 
@@ -39,7 +39,7 @@ Each request to the API must include these two values sent as HTTP headers:
 | 500 Internal Server Error | The object passed to the API could not be parsed or some unexpected error occurred in BEBOMS while processing API request |
 | 503 Service Unavailable   | You reached API limit.  Try again after some time                                                                         |
 
-## Inventory [/ords/bebomsdev/inventory/products/]
+## Inventory [/ords/beboms/inventory/products/]
 
 ### Get Products [GET]
 + Request
@@ -77,7 +77,7 @@ Each request to the API must include these two values sent as HTTP headers:
             ]
         }
 
-## Customer [/ords/bebomsdev/customer/customer/]
+## Customer [/ords/beboms/customer/customer/]
 
 ### Get Customers [GET]
 + Request
@@ -195,7 +195,7 @@ You may create a new customer using this action.
             }
             
             
-## Order [/ords/bebomsdev/order/order/{order_id}]
+## Order [/ords/beboms/order/order/{order_id}]
 
 + Parameters
     + order_id (number) - 49659
@@ -247,7 +247,7 @@ You may create a new customer using this action.
             ]
         }
 
-## Create Order [/ords/bebomsdev/order/order/]
+## Create Order [/ords/beboms/order/order/]
 
 ### Create a New Order[POST]
 
@@ -336,7 +336,7 @@ You may create a new order using this action.
                 ]
             }
 
-## Add Order Items [/ords/bebomsdev/order_items/order_items/{order_id}]
+## Add Order Items [/ords/beboms/order_items/order_items/{order_id}]
 
 + Parameters
     + order_id (number) - 49659
@@ -406,7 +406,7 @@ You may add items to an order using this action.
                 ]
             }
             
-## Tracking [/ords/bebomsdev/tracking/orders/{from_date}]
+## Tracking [/ords/beboms/tracking/orders/{from_date}]
 
 You may get order tracking information with this action. 
 
