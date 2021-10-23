@@ -113,7 +113,8 @@ Each request to the API must include these two values sent as HTTP headers:
                     "ship_province": null,
                     "ship_country_code": null,
                     "ship_phone": "123-123-1234",
-                    "ship_email": null
+                    "ship_email": null,
+                    "net_acct": "Y"
                 },
                 {
                     "customer_id": 30919,
@@ -138,7 +139,8 @@ Each request to the API must include these two values sent as HTTP headers:
                     "ship_province": null,
                     "ship_country_code": null,
                     "ship_phone": "123-456-7890",
-                    "ship_email": "test2@test.com"
+                    "ship_email": "test2@test.com",
+                    "net_acct": "N"
                 }
             ]
         }
@@ -184,7 +186,8 @@ You may create a new customer using this action.
                 "account_number": "",
                 "bill_company_name": "",
                 "country_code": "US",
-                "ship_country_code": "US"
+                "ship_country_code": "US",
+                "net_acct": "Y"
             }
 
 + Response 201 (application/json)
